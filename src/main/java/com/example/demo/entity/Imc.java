@@ -9,7 +9,7 @@ package com.example.demo.entity;
 
 //Se importan las librerías necesarias para la entidad
 import com.example.demo.dto.ImcDTO;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Imc
 {
     //Columnas que contendrá la base de datos
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id")
     private int id;
 
@@ -92,7 +92,7 @@ public class Imc
     public float getPeso() {return peso;}
     public void setPeso(float peso) {this.peso = peso;}
     public float getImc() {return imc;}
-    public void setImc() {this.imc = (float) (peso / sqrt(estatura));}
+    public void setImc() {this.imc = (float) (peso / pow(estatura,2.0));}
     public Date getFecha() {return fecha;}
     public void setFecha(Date fecha) {this.fecha = fecha;}
     

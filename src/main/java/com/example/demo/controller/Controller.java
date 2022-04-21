@@ -34,7 +34,7 @@ public class Controller
     @GetMapping()
     public Iterable<Imc> getImc() {return imcService.getImc();}
 
-    @GetMapping("{id}")
+    @GetMapping()
     public Optional<Imc> getImcById(@PathVariable Integer id) {return imcService.getImcById(id);}
 
     @PostMapping()
@@ -50,7 +50,7 @@ public class Controller
 
     }
 
-    @PutMapping("{id}")
+    @PutMapping()
     public ResponseEntity<String> actualizarImc(@PathVariable Integer id, @RequestBody ImcDTO imcDTO) 
     {
         try 
@@ -62,7 +62,7 @@ public class Controller
         {return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);}
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping()
     public ResponseEntity<String> borrarImc(@PathVariable Integer id) 
     {
         try 
