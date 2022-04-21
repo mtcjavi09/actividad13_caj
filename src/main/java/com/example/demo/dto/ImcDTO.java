@@ -22,6 +22,4 @@ public class ImcDTO
     private float peso;
     private float imc;
     private Date fecha;
-
-    
 }
