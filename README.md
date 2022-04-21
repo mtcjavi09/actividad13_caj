@@ -1,42 +1,54 @@
 # spring-boot-unsij
 
-### Endpoints persona
+### Endpoints imc
 
-#### get all persona
+#### get all imc
 
-`GET  /persona`
+`GET  /imc`
 
-#### get persona by id
+#### get imc by id
 
-`GET  /persona/{id}`
+`GET  /imc/{id}`
 
-#### create persona
+#### create imc
 
-`POST  /persona`
-
-*Body:*
-```json
-{
-    "nombre": "any",
-    "apellido": "any"
-}
-```
-
-#### update persona
-
-`PUT  /persona/{id}`
+`POST  /imc`
 
 *Body:*
 ```json
 {
     "nombre": "any",
-    "apellido": "any"
+    "apellido": "any",
+    "edad": "any",
+    "genero": "any",
+    "estatura": "any",
+    "peso": "any",
+    "imc": "any",
+    "fecha": "any"
+}
+```
+
+#### update imc
+
+`PUT  /imc/{id}`
+
+*Body:*
+```json
+{
+    "nombre": "any",
+    "apellido": "any",
+    "edad": "any",
+    "genero": "any",
+    "estatura": "any",
+    "peso": "any",
+    "imc": "any",
+    "fecha": "any"
 }
 ```
 
 
 
-#### delete persona
+#### delete imc
 
-`DELETE  /persona/{id}`
+`DELETE  /imc/{id}`
 
