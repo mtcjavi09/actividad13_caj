@@ -27,14 +27,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("imc")
 public class Controller 
 {
-
     @Autowired
     ImcService imcService;
 
     @GetMapping()
     public Iterable<Imc> getImc() {return imcService.getImc();}
 
-    @GetMapping()
+    @GetMapping("{id}")
     public Optional<Imc> getImcById(@PathVariable Integer id) {return imcService.getImcById(id);}
 
     @PostMapping()
@@ -43,32 +42,31 @@ public class Controller
         try 
         {
             imcService.guardarImc(new Imc(imcDTO));
-            return new ResponseEntity<>("IMC guardado", HttpStatus.OK);
+            return new ResponseEntity<>("success", HttpStatus.OK);
         } 
         catch (Exception e) 
         {return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);}
 
     }
 
-    @PutMapping()
-    public ResponseEntity<String> actualizarImc(@PathVariable Integer id, @RequestBody ImcDTO imcDTO) 
-    {
+    @PutMapping("{id}")
+    public ResponseEntity<String> actualizarImc(@PathVariable Integer id, @RequestBody ImcDTO imcDTO) {
         try 
         {
             imcService.actualizarImc(id, new Imc(imcDTO));
-            return new ResponseEntity<>("IMC actualizado", HttpStatus.OK);
+            return new ResponseEntity<>("success", HttpStatus.OK);
         } 
         catch (Exception e) 
         {return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);}
+
     }
 
-    @DeleteMapping()
-    public ResponseEntity<String> borrarImc(@PathVariable Integer id) 
-    {
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> borrarPersona(@PathVariable Integer id) {
         try 
         {
             imcService.borrarImc(id);
-            return new ResponseEntity<>("IMC borrado", HttpStatus.OK);
+            return new ResponseEntity<>("success", HttpStatus.OK);
         } 
         catch (Exception e) 
         {return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);}
