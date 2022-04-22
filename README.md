@@ -17,14 +17,15 @@
 *Body:*
 ```json
 {
+    "id": 0,
     "nombre": "any",
     "apellido": "any",
-    "edad": "any",
+    "edad": 0,
     "genero": "any",
-    "estatura": "any",
-    "peso": "any",
-    "imc": "any",
-    "fecha": "any"
+    "estatura": 0.0,
+    "peso": 0.0,
+    "imc": 0.0,
+    "fecha": "AAAA-MM-DD"
 }
 ```
 
@@ -35,14 +36,15 @@
 *Body:*
 ```json
 {
+    "id": 0,
     "nombre": "any",
     "apellido": "any",
-    "edad": "any",
+    "edad": 0,
     "genero": "any",
-    "estatura": "any",
-    "peso": "any",
-    "imc": "any",
-    "fecha": "any"
+    "estatura": 0.0,
+    "peso": 0.0,
+    "imc": 0.0,
+    "fecha": "AAAA-MM-DD"
 }
 ```
 
